@@ -1,0 +1,174 @@
+/* Additional styles to support JavaScript functionality */
+
+/* Avatar Upload Styling */
+.profile-avatar {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.avatar-overlay span {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.profile-avatar:hover .avatar-overlay {
+    opacity: 1;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.02);
+}
+
+/* Form Validation Styles */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+.form-group input.error {
+    border-color: #e53e3e;
+}
+
+/* Notification System */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    margin-bottom: 10px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.notification.success {
+    background-color: #48bb78;
+}
+
+.notification.error {
+    background-color: #f56565;
+}
+
+/* Loading States */
+.save-btn {
+    position: relative;
+}
+
+.save-btn:disabled {
+    background-color: #90cdf4;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Tab Transitions */
+.profile-section {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-section.active {
+    opacity: 1;
+}
+
+/* Mobile Responsive Additions */
+@media (max-width: 768px) {
+    .profile-nav {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .profile-nav::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .notification {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Favorite Card Animations */
+.favorite-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

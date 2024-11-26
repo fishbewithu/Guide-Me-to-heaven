@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuideMe - Categories</title>
+    <link rel="stylesheet" href="/css/categories-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">GuideMe</a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="deals.html">Deals</a>
+                <a href="map.html">Map</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="categories-page">
+        <section class="categories-hero">
+            <div class="categories-hero-content">
+                <h1>Explore All Categories</h1>
+                <p>Find exactly what you're looking for in your city</p>
+            </div>
+        </section>
+
+        <section class="category-filters">
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="food-dining">Food & Dining</button>
+                <button class="filter-btn" data-category="entertainment">Entertainment</button>
+                <button class="filter-btn" data-category="attraction">Attraction</button>
+                <button class="filter-btn" data-category="shopping">Shopping</button>
+                <button class="filter-btn" data-category="outdoor">Outdoor</button>
+                <button class="filter-btn" data-category="nightlife">Night Life</button>
+            </div>
+        </section>
+
+        <section class="categories-grid">
+            <div class="category-item" data-categories="food-dining">
+                <img src="images/restaurants.jpg" alt="Restaurants">
+                <div class="category-details">
+                    <h3>Restaurants</h3>
+                    <p>200+ Locations</p>
+                    <div class="tags">
+                        <span>Fine Dining</span>
+                        <span>Casual</span>
+                        <span>International</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="entertainment">
+                <img src="images/cinema.jpg" alt="Cinema & Theater">
+                <div class="category-details">
+                    <h3>Cinema & Theater</h3>
+                    <p>50+ Locations</p>
+                    <div class="tags">
+                        <span>Movies</span>
+                        <span>Live Shows</span>
+                        <span>Performances</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="attraction">
+                <img src="images/museums.jpg" alt="Museums & Galleries">
+                <div class="category-details">
+                    <h3>Museums & Galleries</h3>
+                    <p>30+ Locations</p>
+                    <div class="tags">
+                        <span>Art</span>
+                        <span>History</span>
+                        <span>Science</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="shopping">
+                <img src="images/shopping.jpg" alt="Shopping Centers">
+                <div class="category-details">
+                    <h3>Shopping Centers</h3>
+                    <p>80+ Locations</p>
+                    <div class="tags">
+                        <span>Malls</span>
+                        <span>Boutiques</span>
+                        <span>Markets</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="outdoor">
+                <img src="images/parks.jpg" alt="Parks & Recreation">
+                <div class="category-details">
+                    <h3>Parks & Recreation</h3>
+                    <p>100+ Locations</p>
+                    <div class="tags">
+                        <span>Parks</span>
+                        <span>Sports</span>
+                        <span>Activities</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="nightlife">
+                <img src="images/nightlife.jpg" alt="Night Life">
+                <div class="category-details">
+                    <h3>Night Life</h3>
+                    <p>70+ Locations</p>
+                    <div class="tags">
+                        <span>Bars</span>
+                        <span>Clubs</span>
+                        <span>Live Music</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="food-dining">
+                <img src="images/cafes.jpg" alt="Cafes & Bakeries">
+                <div class="category-details">
+                    <h3>Cafes & Bakeries</h3>
+                    <p>90+ Locations</p>
+                    <div class="tags">
+                        <span>Coffee</span>
+                        <span>Pastries</span>
+                        <span>Brunch</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="entertainment">
+                <img src="images/gaming.jpg" alt="Gaming & Arcades">
+                <div class="category-details">
+                    <h3>Gaming & Arcades</h3>
+                    <p>25+ Locations</p>
+                    <div class="tags">
+                        <span>Video Games</span>
+                        <span>Board Games</span>
+                        <span>VR</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categoryItems = document.querySelectorAll('.category-item');
+
+            const filterCategories = (category) => {
+                categoryItems.forEach(item => {
+                    const categories = item.dataset.categories?.split(',') || [];
+                    
+                    item.style.opacity = '0';
+                    
+                    if (category === 'all' || categories.includes(category)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transition = 'opacity 0.3s ease-in';
+                        }, 50);
+                    } else {
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCategories(btn.dataset.category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

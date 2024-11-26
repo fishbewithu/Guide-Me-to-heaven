@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuideMe - Food & Dining</title>
+    <link rel="stylesheet" href="/css/categories-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">GuideMe</a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="deals.html">Deals</a>
+                <a href="map.html">Map</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="categories-page">
+        <section class="categories-hero">
+            <div class="categories-hero-content">
+                <h1>Food & Dining Experiences</h1>
+                <p>Discover the best culinary destinations in your city</p>
+            </div>
+        </section>
+
+        <section class="category-filters">
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="all">All Dining</button>
+                <button class="filter-btn" data-category="fine-dining">Fine Dining</button>
+                <button class="filter-btn" data-category="casual">Casual Dining</button>
+                <button class="filter-btn" data-category="cafes">Cafes & Bakeries</button>
+                <button class="filter-btn" data-category="international">International</button>
+                <button class="filter-btn" data-category="fast-food">Fast Food</button>
+                <button class="filter-btn" data-category="desserts">Desserts</button>
+            </div>
+        </section>
+
+        <section class="categories-grid">
+            <div class="category-item" data-categories="fine-dining">
+                <img src="images/fine-dining.jpg" alt="Fine Dining">
+                <div class="category-details">
+                    <h3>Fine Dining Restaurants</h3>
+                    <p>45+ Locations</p>
+                    <div class="tags">
+                        <span>Gourmet</span>
+                        <span>Wine Selection</span>
+                        <span>Reservations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="casual,international">
+                <img src="images/casual-dining.jpg" alt="Casual Restaurants">
+                <div class="category-details">
+                    <h3>Casual Dining</h3>
+                    <p>120+ Locations</p>
+                    <div class="tags">
+                        <span>Family Friendly</span>
+                        <span>Diverse Menu</span>
+                        <span>Relaxed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="cafes">
+                <img src="images/cafes.jpg" alt="Cafes & Bakeries">
+                <div class="category-details">
+                    <h3>Cafes & Bakeries</h3>
+                    <p>80+ Locations</p>
+                    <div class="tags">
+                        <span>Coffee</span>
+                        <span>Fresh Pastries</span>
+                        <span>Brunch</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="international">
+                <img src="images/international.jpg" alt="International Cuisine">
+                <div class="category-details">
+                    <h3>International Cuisine</h3>
+                    <p>95+ Locations</p>
+                    <div class="tags">
+                        <span>Asian</span>
+                        <span>European</span>
+                        <span>Mediterranean</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="fast-food">
+                <img src="images/fast-food.jpg" alt="Fast Food">
+                <div class="category-details">
+                    <h3>Fast Food</h3>
+                    <p>150+ Locations</p>
+                    <div class="tags">
+                        <span>Quick Service</span>
+                        <span>Drive-thru</span>
+                        <span>Value Meals</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="desserts">
+                <img src="images/desserts.jpg" alt="Desserts & Sweet Treats">
+                <div class="category-details">
+                    <h3>Desserts & Sweet Treats</h3>
+                    <p>60+ Locations</p>
+                    <div class="tags">
+                        <span>Ice Cream</span>
+                        <span>Pastries</span>
+                        <span>Chocolates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="international">
+                <img src="images/street-food.jpg" alt="Street Food">
+                <div class="category-details">
+                    <h3>Street Food</h3>
+                    <p>75+ Locations</p>
+                    <div class="tags">
+                        <span>Food Trucks</span>
+                        <span>Local Favorites</span>
+                        <span>Quick Bites</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-item" data-categories="casual">
+                <img src="images/bistros.jpg" alt="Bistros">
+                <div class="category-details">
+                    <h3>Bistros</h3>
+                    <p>40+ Locations</p>
+                    <div class="tags">
+                        <span>Cozy</span>
+                        <span>Wine Bar</span>
+                        <span>Light Meals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categoryItems = document.querySelectorAll('.category-item');
+
+            const filterCategories = (category) => {
+                categoryItems.forEach(item => {
+                    const categories = item.dataset.categories?.split(',') || [];
+                    
+                    item.style.opacity = '0';
+                    
+                    if (category === 'all' || categories.includes(category)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transition = 'opacity 0.3s ease-in';
+                        }, 50);
+                    } else {
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCategories(btn.dataset.category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

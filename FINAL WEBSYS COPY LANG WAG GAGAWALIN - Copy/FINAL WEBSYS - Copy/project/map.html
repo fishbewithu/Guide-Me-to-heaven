@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuideMe - San Fernando, La Union Map</title>
+    <link rel="stylesheet" href="/css/map-styles.css">
+    <!-- Only Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">GuideMe</a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="deals.html">Deals</a>
+                <a href="map.html">Map</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="map-page">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Location Header -->
+            <div class="location-header">
+                <h2>San Fernando City, La Union</h2>
+                <p>Surfing Capital of the North</p>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search in San Fernando..." class="search-input">
+                </div>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filter-container">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Beaches</button>
+                    <button class="filter-btn">Restaurants</button>
+                    <button class="filter-btn">Hotels</button>
+                    <button class="filter-btn">Cafes</button>
+                    <button class="filter-btn">Landmarks</button>
+                    <button class="filter-btn">Surf Spots</button>
+                </div>
+            </div>
+
+            <!-- Locations List -->
+            <div class="locations-list">
+                <!-- Beaches & Surf Spots -->
+                <article class="location-item" data-coordinates="16.6150,120.2818">
+                    <div class="location-info">
+                        <h3>Urbiztondo Beach</h3>
+                        <p class="category">Beaches, Surf Spots</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i> 
+                                <span>4.8</span>
+                            </span>
+                            <span class="distance">Surfing Area</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Restaurants -->
+                <article class="location-item" data-coordinates="16.6177,120.2856">
+                    <div class="location-info">
+                        <h3>Halo Halo de Iloko</h3>
+                        <p class="category">Restaurants</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.5</span>
+                            </span>
+                            <span class="distance">Local Cuisine</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hotels -->
+                <article class="location-item" data-coordinates="16.6147,120.2829">
+                    <div class="location-info">
+                        <h3>Thunderbird Resorts</h3>
+                        <p class="category">Hotels</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.6</span>
+                            </span>
+                            <span class="distance">Resort & Casino</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cafes -->
+                <article class="location-item" data-coordinates="16.6160,120.2847">
+                    <div class="location-info">
+                        <h3>El Union Coffee</h3>
+                        <p class="category">Cafes</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.7</span>
+                            </span>
+                            <span class="distance">Third Wave Coffee</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Landmarks -->
+                <article class="location-item" data-coordinates="16.6169,120.3203">
+                    <div class="location-info">
+                        <h3>Ma-Cho Temple</h3>
+                        <p class="category">Landmarks</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.4</span>
+                            </span>
+                            <span class="distance">Cultural Site</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- More Restaurants -->
+                <article class="location-item" data-coordinates="16.6155,120.2836">
+                    <div class="location-info">
+                        <h3>Tagpuan sa San Juan</h3>
+                        <p class="category">Restaurants</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.3</span>
+                            </span>
+                            <span class="distance">Local Food</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- More Cafes -->
+                <article class="location-item" data-coordinates="16.6158,120.2840">
+                    <div class="location-info">
+                        <h3>Clean Beach Coffee</h3>
+                        <p class="category">Cafes</p>
+                        <div class="location-meta">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.5</span>
+                            </span>
+                            <span class="distance">Beachfront Cafe</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </aside>
+
+        <!-- Map Area -->
+        <section class="map-area">
+            <div class="map-placeholder">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>San Fernando, La Union</p>
+                <p class="map-subtitle">16.6167° N, 120.3167° E</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Filter buttons functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.textContent.toLowerCase();
+                const locationItems = document.querySelectorAll('.location-item');
+                
+                locationItems.forEach(item => {
+                    const category = item.querySelector('.category').textContent.toLowerCase();
+                    if (filter === 'all' || category.includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const locationItems = document.querySelectorAll('.location-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            locationItems.forEach(item => {
+                const locationName = item.querySelector('h3').textContent.toLowerCase();
+                const locationCategory = item.querySelector('.category').textContent.toLowerCase();
+                
+                if (locationName.includes(searchTerm) || locationCategory.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
